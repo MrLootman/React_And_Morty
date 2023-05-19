@@ -1,7 +1,9 @@
 // Nécessite d'avoir ajouté "type": "module" dans le package.json
 import dotenv from "dotenv";
 import mysql from "mysql";
+import fs from "fs";
 
+// Donne accès aux variables d'environnements inscrites dans le fichier .env
 dotenv.config();
 
 const database = mysql.createPool({
