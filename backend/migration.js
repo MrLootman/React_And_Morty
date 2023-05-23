@@ -1,6 +1,8 @@
 // Nécessite d'avoir ajouté "type": "module" dans le package.json
 import dotenv from "dotenv";
-import mysql from "mysql";
+import mysql from "mysql2";
+
+// La dépendance fs (File System) est implicitement installée avec Express.js
 import fs from "fs";
 
 // Donne accès aux variables d'environnements inscrites dans le fichier .env
@@ -37,5 +39,6 @@ database.getConnection((error, connection) => {
         console.log("👍 Success, the data has been added to the database!");
 
         connection.release(); // Libérer la connexion une fois terminée
+        database.end(); // Ferme la connexion à la base de donnée
     });
 });

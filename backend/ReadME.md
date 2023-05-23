@@ -1,10 +1,10 @@
 # Rick and Morty : Côté serveur
 ```Partie 1: Mise en place des fondamentaux```
 
-#### Résumé des étapes :
+#### Résumé des étapes 🖥️ :
 ### 1. Sub-division des dossiers de travail :
-    - Un dossier frontend;
-    - Un dossier backend;
+    - Un dossier frontend 
+    - Un dossier backend 
 
 ### 2. Initialisation d'un serveur express;
     - Installation de la dépendance express;
@@ -12,6 +12,7 @@
     - Création de notre première route;
     - Vérification du caractère fonctionnel de notre serveur;
     - Création du gitignore;
+    - Installation de nodemon;
 
 ### 3. Création de notre base de donnée :
     - Elaboration de notre script au format sql;
@@ -20,7 +21,7 @@
         - Insertion des premières données;
 
 ### 4. Connexion entre le serveur et la base de donnée :
-    - Installation des dépendances dotenv et mysql;
+    - Installation des dépendances dotenv et mysql2;
         - Rédaction de nos variables d'environnements;
         - Création d'une copie des variables attendues (.env.sample);
 
@@ -29,13 +30,25 @@
         - Exécuter le script;
         - Vérifier que les données sont bien enregistrées;
 
-```Partie 2: Le MVC```
+```Partie 2: Requêtes et réponses```
 
-### 5. Mise en place d'une architecture logicielle Model-View-Controller
+### 5. Mise en place d'une architecture saine
 
     - Créer les dossiers nécessaires:
-        - Création du dossier source:
+        - Création du dossier src:, à l'intérieur duquel se tiendront:
             - Création du fichier datasource.js;
-            - Le dossier `models`;
-            - Le dossier `controllers`;
             - Le dossier routes;
+            - Le dossier controllers;
+
+    - Elaboration du CRUD pour le gestionnaire des personnages:
+        - Création d'un fichier rickAndMortyCharacter.controller.js;
+            - Création d'une fonction "getAllCharacters",
+            - Création d'une fonction "getCharacterById",
+            - Création d'une fonction "updateCharacter",
+            - Création d'une fonction "deleteCharacter",
+            - Création d'une fonction "createCharacter";
+    
+    - Elaboration des routes liées à ce gestionnaire précis:
+        - Cinq fonctions = cinq routes;
+
+    - Tester les routes et vérifier leur bon fonctionnement 🔥
