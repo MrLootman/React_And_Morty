@@ -1,5 +1,5 @@
 # Rick and Morty : Côté serveur
-```Partie 1: Mise en place des fondamentaux```
+## ```Partie 1: Mise en place des fondamentaux```
 
 #### Résumé des étapes 🖥️ :
 ### 1. Sub-division des dossiers de travail :
@@ -30,7 +30,7 @@
         - Exécuter le script;
         - Vérifier que les données sont bien enregistrées;
 
-```Partie 2: Requêtes et réponses```
+## ```Partie 2: Requêtes et réponses```
 
 ### 5. Mise en place d'une architecture saine
 
