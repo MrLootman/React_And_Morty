@@ -39,6 +39,7 @@
             - Création du fichier datasource.js;
             - Le dossier routes;
             - Le dossier controllers;
+### 6. Création du Create - Read - Update - Delete pour la table rick_character
 
     - Elaboration du CRUD pour le gestionnaire des personnages:
         - Création d'un fichier rickAndMortyCharacter.controller.js;
@@ -50,5 +51,7 @@
     
     - Elaboration des routes liées à ce gestionnaire précis:
         - Cinq fonctions = cinq routes;
+
+### 7. Correction des bugs et phase de test
 
     - Tester les routes et vérifier leur bon fonctionnement 🔥
