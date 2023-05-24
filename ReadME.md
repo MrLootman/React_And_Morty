@@ -14,8 +14,8 @@
 ### 2. Création de notre base de donnée :
     - Elaboration de notre script au format sql;
         - Création de la base de donnée rick_and_morty_db
-        - Création de la table character;
-        - Insertion des premières données;
+        - Création de la table rick_character;
+        - Insertion des premières données (un jeu de donnée avec quatre personnages sera suffisant, mais tu peux en mettre autant que tu veux);
 
 ### 3. Connexion entre le serveur et la base de donnée :
     - Installation des dépendances dotenv et mysql2;
@@ -32,10 +32,12 @@
 ### 4. Mise en place d'une architecture saine
 
     - Créer les dossiers nécessaires:
-        - Création du dossier src:, à l'intérieur duquel se tiendront:
-            - Création du fichier datasource.js;
+        - Création du dossier src, à l'intérieur duquel se tiendront:
+            - Le fichier datasource.js;
             - Le dossier routes;
             - Le dossier controllers;
+
+    - Le fichier datasource.js doit contenir le code nécessaire pour se connecter à la base de donnée.
 ### 5. Création du Create - Read - Update - Delete pour la table rick_character
 
     - Elaboration du CRUD pour le gestionnaire des personnages:
