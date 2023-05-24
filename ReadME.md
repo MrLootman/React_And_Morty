@@ -7,9 +7,8 @@
     - Installation de la dépendance express;
     - Instanciation d'express;
     - Création de notre première route;
-    - Vérification du caractère fonctionnel de notre serveur;
-    - Création du gitignore;
-    - Installation de nodemon;
+    - Vérification du caractère fonctionnel de notre serveur (simplement pour vérifier que le serveur fonctionne. Tu peux utiliser Postman pour toutes les vérifications !);
+    - Installation de la dépendance nodemon (tu te souviens à quoi ça sert ?);
 
 ### 2. Création de notre base de donnée :
     - Elaboration de notre script au format sql;
