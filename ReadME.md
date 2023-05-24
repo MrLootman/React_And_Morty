@@ -6,7 +6,7 @@
 
 Te voilà dans le projet Rick and Morty. Le frontend est élaboré, identiquement à ce que tu as en fin de Workshop sur Rick and Morty avec React.js.
 
-Désormais, il y a un dossier backend de disponible, et ce dossier est complètement vide.
+Désormais, il y a un dossier backend de disponible, et ce dossier est quasiment vide (j'ai juste laissé le fichier .gitignore).
 
 ### `Ta mission : te débarrasser de l'API, et créer la tienne !`
 
