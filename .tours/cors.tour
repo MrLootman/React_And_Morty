@@ -1,0 +1,22 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Cors",
+  "steps": [
+    {
+      "file": "backend/index.js",
+      "description": "Les Cors (Cross-Origin Resource Sharing) sont un mécanisme de sécurité utilisé par les navigateurs pour contrôler les requêtes effectuées entre différents domaines (différentes origines).",
+      "line": 3
+    },
+    {
+      "file": "backend/index.js",
+      "description": "Ils permettent de définir une politique de sécurité pour contrôler l'accès aux ressources d'un serveur depuis une origine différente.\r\nIci, nous déclarons les options qui détermineront les adresses autorisées à accéder aux ressources de notre serveur.",
+      "line": 15
+    },
+    {
+      "file": "backend/index.js",
+      "description": "Il y a trois ports distincts dans notre application : Le port du serveur (3000, dans notre cas) ; Le port de notre client (5173, dans le cas d'un projet initialisé avec Vite); Le port de notre base de donnée (3306 par défaut, avec MySQL);",
+      "line": 28
+    }
+  ],
+  "ref": "part_2"
+}

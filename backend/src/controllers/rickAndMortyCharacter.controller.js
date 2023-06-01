@@ -5,8 +5,8 @@ const getAllCharacters = (req, res) => {
     // On tente d'interroger la base de donnée pour récupérer tous les personnages
     database.query("SELECT * FROM rick_and_morty_character")
         .then(([result]) => {
-            if (result) {
-                // Envoi de la réponse si result est *truthy*.
+            if (result.length) {
+                // Envoi de la réponse si result est truthy.
                 res.status(200).send(result)
             } else {
                 // Gestion du cas où aucun résultat n'a été trouvé
@@ -23,7 +23,7 @@ const getCharacterById = (req, res) => {
 
     database.query("SELECT * FROM rick_and_morty_character WHERE id = ?", [id])
         .then(([result]) => {
-            if (result) {
+            if (result.length) {
                 res.status(200).send(result)
             } else {
                 res.status(404).json({ error: `The character with the id ${req.params.id} doesn't exists` })
@@ -48,7 +48,7 @@ const createCharacter = (req, res) => {
                 database.query("INSERT INTO rick_and_morty_character (name, status, gender, species, image) VALUES (?, ?, ?, ?, ?)",
                     [name, status, gender, species, image])
                     .then(([result]) => {
-                        if (result.affectedRows > 0) {
+                        if (result.affectedRows) {
                             res.status(201).json({
                                 success: true,
                                 message: `The character named ${name} has been created successfully`

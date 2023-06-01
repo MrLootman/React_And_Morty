@@ -23,6 +23,10 @@
         - Création de la table character;
         - Insertion des premières données;
 
+    - Installation de l'extension VS Code MySQL de Weijan Chen
+        - Connexion via l'extension à notre base de donnée;
+        - Vérification de la bonne insertion des données;
+
 ### 4. Connexion entre le serveur et la base de donnée :
 
     - Installation des dépendances dotenv et mysql2;

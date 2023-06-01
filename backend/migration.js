@@ -10,10 +10,10 @@ dotenv.config();
 
 const database = mysql.createPool({
     host: process.env.HOST,
-    port: process.env.PORT,
-    user: process.env.USER,
-    password: process.env.PASSWORD,
-    database: process.env.DATABASE,
+    port: process.env.DB_PORT,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
     multipleStatements: true
 });
 
@@ -39,6 +39,5 @@ database.getConnection((error, connection) => {
         console.log("👍 Success, the data has been added to the database!");
 
         connection.release(); // Libérer la connexion une fois terminée
-        database.end(); // Ferme la connexion à la base de donnée
     });
 });

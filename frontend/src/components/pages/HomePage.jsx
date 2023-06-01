@@ -4,11 +4,13 @@ import RickAndMortyCard from "../RickAndMortyCard";
 function HomePage() {
     const [data, setData] = useState([]);
     const [selectedValue, setSelectedValue] = useState("...");
+    
+    // fetch("https://rickandmortyapi.com/api/character")
 
     useEffect(() => {
-        fetch("https://rickandmortyapi.com/api/character")
+        fetch("http://localhost:3000/characters")
             .then((response) => response.json())
-            .then((res) => setData(res.results))
+            .then((res) => setData(res))
             .catch((err) => console.error(err))
     }, [])
 
@@ -20,7 +22,7 @@ function HomePage() {
         <main className="home-page">
             <select className="home-page_select" onChange={handleChange}>
                 <option>...</option>
-                {data.map((el) => {
+                {data && data.map((el) => {
                     return (
                         <option key={el.id}>{el.name}</option>
                     )
@@ -29,13 +31,13 @@ function HomePage() {
             </select>
 
             <ul className="home-page_ul">
-                {data
+                {data && data
                     .filter((el) => selectedValue === "..." || selectedValue === el.name)
                     .map((el) => {
-                    return (
-                        <RickAndMortyCard key={el.id} id={el.id} name={el.name} image={el.image} />
-                    )
-                })
+                        return (
+                            <RickAndMortyCard key={el.id} id={el.id} name={el.name} image={el.image} />
+                        )
+                    })
                 }
 
             </ul>
