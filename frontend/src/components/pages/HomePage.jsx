@@ -8,7 +8,7 @@ function HomePage() {
     // fetch("https://rickandmortyapi.com/api/character")
 
     useEffect(() => {
-        fetch("http://localhost:3000/characters")
+        fetch("http://localhost:5000/characters")
             .then((response) => response.json())
             .then((res) => setData(res))
             .catch((err) => console.error(err))
