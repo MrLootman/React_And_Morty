@@ -53,9 +53,9 @@
         - Création d'un fichier rickAndMortyCharacter.controller.js;
             - Création d'une fonction "getAllCharacters",
             - Création d'une fonction "getCharacterById",
+            - Création d'une fonction "createCharacter";
             - Création d'une fonction "updateCharacter",
             - Création d'une fonction "deleteCharacter",
-            - Création d'une fonction "createCharacter";
     
     - Elaboration des routes liées à ce gestionnaire précis:
         - Cinq fonctions = cinq routes;

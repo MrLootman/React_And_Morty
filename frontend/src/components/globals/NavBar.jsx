@@ -10,8 +10,8 @@ function NavBar() {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/contact">
-                        <h2>Contact Us</h2>
+                    <NavLink to="/admin">
+                        <h2>Admin Panel</h2>
                     </NavLink>
                 </li>
             </ul>
