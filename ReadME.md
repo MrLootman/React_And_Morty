@@ -1,10 +1,10 @@
 ## ```Partie 3: Implémenter l'ajout de fichier```
 
 ### 0. Piqûre de rappel
-
+    <details>
     - A ce stade, n'importe quel utilisateur peut:
         - Créer un personnage depuis un formulaire, et avoir une réponse en retour suffisamment précise pour savoir s'il a réussi. Cette fonctionnalité a été réalisée dans la vidéo suivante: 
-
+    </details>
 🔽🔽🔽      [Lien vers la vidéo YouTube](https://www.youtube.com/watch?v=AR2-vcDQ8_E)
 
         - Bien entendu, il manque encore quelques fonctionnalités, telles que: 
