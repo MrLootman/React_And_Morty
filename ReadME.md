@@ -12,14 +12,14 @@
             - Sécurisation côté back (pour se protéger des injections SQL notamment)
         - L'heure n'étant pas au déploiement, je t'invite à poursuivre le challenge en mettant cela entre parenthèses 🙂
 
-### 9. Préparation de la partie backend
+### 1. Préparation de la partie backend
 
     - A la racine du backend, il nous faut créer le dossier public:
         - A l'intérieur duquel nous créérons:
             - un dossier uploads;
             - un dossier tmp;
 
-### 10. Installation et utilisation de la dépendance multer
+### 2. Installation et utilisation de la dépendance multer
 
     - Installation la dépendance multer dans la partie backend, puis:
         - Créer un fichier uploadRouter.route.js, dans lequel il faudra écrire les lignes de code nécessaires pour obtenir une route permettant le téléchargement d'une image.
@@ -29,7 +29,7 @@
 
     - Enfin, tu peux tester dans Postman si ton téléchargement est fonctionnel, en veillant à sélectionner le format form-data, et appliquer le bon nommage pour la key 🔥
 
-### 11. Permettre à l'utilisateur de télécharger une image depuis la page Admin Panel
+### 3. Permettre à l'utilisateur de télécharger une image depuis la page Admin Panel
 
     - La suite de ce challenge concernera la partie frontend. Ne la sous-estime pas, il y sera question d'affichages conditionnels, de feuilles de style, de variables d'états utilisées à bon escient... Bref, un super terrain d'entraînement avec React !
 
@@ -44,7 +44,7 @@
             - S'il clique sur oui, un input de type "file" doit apparaître. 
             - S'il clique sur non, le même input de type "text" qu'auparavant doit apparaître.
 
-### 12. A partir de là...
+### 4. A partir de là...
 
     - Je te laisse explorer, méditer et définir ta manière de faire. A noter qu'il n'y en a pas qu'une seule. Seulement, il y en aura des plus optimisées que d'autres.
 
