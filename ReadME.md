@@ -68,7 +68,7 @@
 
     - A ce stade, nous vous simplement que notre utilisateur puisse:
         - Créer un personnage depuis un formulaire, et avoir une réponse en retour suffisamment précise pour savoir s'il a réussi (fonctionnalité réalisée dans la vidéo suivante: 
-            - [Lien vers la vidéo YouTube](https://www.youtube.com/watch?v=AR2-vcDQ8_E)
+            - `[Lien vers la vidéo YouTube]``(https://www.youtube.com/watch?v=AR2-vcDQ8_E)`
         )
         - Mettre à jour un personnage de son choix,
         - Supprimer n'importe quel personnage, avec une pop-up de confirmation;
