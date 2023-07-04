@@ -1,80 +1,16 @@
-# Rick and Morty : Côté serveur
-## ```Partie 1: Mise en place des fondamentaux```
+## ```Partie 3: Implémenter l'ajout de fichier```
 
-#### Résumé des étapes 🖥️ :
-### 1. Sub-division des dossiers de travail :
+### 0. Piqûre de rappel
 
-    - Un dossier frontend 
-    - Un dossier backend 
-
-### 2. Initialisation d'un serveur express;
-
-    - Installation de la dépendance express;
-    - Instanciation d'express;
-    - Création de notre première route;
-    - Vérification du caractère fonctionnel de notre serveur;
-    - Création du gitignore;
-    - Installation de nodemon;
-
-### 3. Création de notre base de donnée :
-    - Elaboration de notre script au format sql;
-        - Création de la base de donnée rick_and_morty_db
-        - Création de la table character;
-        - Insertion des premières données;
-
-    - Installation de l'extension VS Code MySQL de Weijan Chen
-        - Connexion via l'extension à notre base de donnée;
-        - Vérification de la bonne insertion des données;
-
-### 4. Connexion entre le serveur et la base de donnée :
-
-    - Installation des dépendances dotenv et mysql2;
-        - Rédaction de nos variables d'environnements;
-        - Création d'une copie des variables attendues (.env.sample);
-
-    - Création d'un fichier migration.js:
-        - Etablir la connexion avec la base de donnée;
-        - Exécuter le script;
-        - Vérifier que les données sont bien enregistrées;
-
-## ```Partie 2: Requêtes et réponses```
-
-### 5. Mise en place d'une architecture saine
-
-    - Créer les dossiers nécessaires:
-        - Création du dossier src:, à l'intérieur duquel se tiendront:
-            - Création du fichier datasource.js;
-            - Le dossier routes;
-            - Le dossier controllers;
-
-### 6. Création du Create - Read - Update - Delete pour la table rick_character
-
-    - Elaboration du CRUD pour le gestionnaire des personnages:
-        - Création d'un fichier rickAndMortyCharacter.controller.js;
-            - Création d'une fonction "getAllCharacters",
-            - Création d'une fonction "getCharacterById",
-            - Création d'une fonction "createCharacter";
-            - Création d'une fonction "updateCharacter",
-            - Création d'une fonction "deleteCharacter",
-    
-    - Elaboration des routes liées à ce gestionnaire précis:
-        - Cinq fonctions = cinq routes;
-
-### 7. Correction des bugs et phase de test
-
-    - Tester les routes et vérifier leur bon fonctionnement 🔥
-
-### 8. Créer un "panel admin" côté frontend
-
-    - A ce stade, nous vous simplement que notre utilisateur puisse:
+    - A ce stade, n'importe quel utilisateur peut:
         - Créer un personnage depuis un formulaire, et avoir une réponse en retour suffisamment précise pour savoir s'il a réussi. Cette fonctionnalité a été réalisée dans la vidéo suivante: 
 
 🔽🔽🔽      [Lien vers la vidéo YouTube](https://www.youtube.com/watch?v=AR2-vcDQ8_E)
 
-        - Mettre à jour un personnage de son choix,
-        - Supprimer n'importe quel personnage, avec une pop-up de confirmation;
-
-## ```Partie 3: Implémenter l'ajout de fichier```
+        - Bien entendu, il manque encore quelques fonctionnalités, telles que: 
+            - Sécurisation côté front (avec une indication claire si un input a été mal renseigné)
+            - Sécurisation côté back (pour se protéger des injections SQL notamment)
+        - L'heure n'étant pas au déploiement, je t'invite à poursuivre le challenge en mettant cela entre parenthèses 🙂
 
 ### 9. Préparation de la partie backend
 
@@ -85,7 +21,7 @@
 
 ### 10. Installation et utilisation de la dépendance multer
 
-    - Installation la dépendance ```multer``` dans la partie backend, puis:
+    - Installation la dépendance multer dans la partie backend, puis:
         - Créer un fichier uploadRouter.route.js, dans lequel il faudra écrire les lignes de code nécessaires pour obtenir une route permettant le téléchargement d'une image.
         - Puis, il nous faut créer une fonction / middleware `uploadController` (le fichier peut être stocké dans le dossier controller). Elle te servira notamment à gérer le renommage du fichier provenant de la requête.
 
@@ -111,6 +47,7 @@
 ### 12. A partir de là...
 
     - Je te laisse explorer, méditer et définir ta manière de faire. A noter qu'il n'y en a pas qu'une seule. Seulement, il y en aura des plus optimisées que d'autres.
-    - Je développe certaines stratégies dans ma vidéo sur la création de personnage, tu peux aller y jeter un oeil pour t'en inspirer 😉
+
+    - Je développe certaines stratégies dans ma vidéo sur la création de personnage (cf. partie 2, 8ème étape), tu peux aller y jeter un oeil pour t'en inspirer 😉
 
     Bonne chance 🚀
