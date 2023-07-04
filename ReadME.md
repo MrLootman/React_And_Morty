@@ -67,9 +67,10 @@
 ### 8. Créer un "panel admin" côté frontend
 
     - A ce stade, nous vous simplement que notre utilisateur puisse:
-        - Créer un personnage depuis un formulaire, et avoir une réponse en retour suffisamment précise pour savoir s'il a réussi (fonctionnalité réalisée dans la vidéo suivante: 
-[Lien vers la vidéo YouTube](https://www.youtube.com/watch?v=AR2-vcDQ8_E)
-        )
+        - Créer un personnage depuis un formulaire, et avoir une réponse en retour suffisamment précise pour savoir s'il a réussi. Cette fonctionnalité a été réalisée dans la vidéo suivante: 
+
+🔽🔽🔽      [Lien vers la vidéo YouTube](https://www.youtube.com/watch?v=AR2-vcDQ8_E)
+
         - Mettre à jour un personnage de son choix,
         - Supprimer n'importe quel personnage, avec une pop-up de confirmation;
 
@@ -98,7 +99,7 @@
 
     - Je te propose de créer un pattern permettant une expérience utilisateur agréable (perfectible, certes, mais agréable 😀). Voici le lien figma qui t'aidera à te le représenter:
 
-[Lien vers le figma](https://www.figma.com/file/LmZN4c2DVjuBvDgk2KfCT0/Rick-%26-Morty-Fullstack-Challenge?type=design&mode=design&t=WMhBFYfrwKhDo6AW-1) 
+🔽🔽🔽      [Lien vers le figma](https://www.figma.com/file/LmZN4c2DVjuBvDgk2KfCT0/Rick-%26-Morty-Fullstack-Challenge?type=design&mode=design&t=WMhBFYfrwKhDo6AW-1) 
 
     - Tu vas devoir transformer l'actuel composant CreationCharacterForm pour qu'il affiche un input de type checkbox à la place de l'input de type "text" (celui dédié aux images);
     
