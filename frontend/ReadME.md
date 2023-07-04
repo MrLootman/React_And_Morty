@@ -1,5 +1,6 @@
 ### Entraînement avec React.js
 
+`Partie 1: Travailler avec une API`
 
 ## __Préambule__ :
 #### Te voilà prêt à démarrer. Si tu tentes la commande :

@@ -3,7 +3,6 @@
 
 #### Résumé des étapes 🖥️ :
 ### 1. Sub-division des dossiers de travail :
-
     - Un dossier frontend 
     - Un dossier backend 
 
@@ -61,5 +60,47 @@
         - Cinq fonctions = cinq routes;
 
 ### 7. Correction des bugs et phase de test
-
     - Tester les routes et vérifier leur bon fonctionnement 🔥
+
+### 8. Créer un "panel admin" côté frontend
+    - A ce stade, nous vous simplement que notre utilisateur puisse:
+        - Créer un personnage depuis un formulaire, et avoir une réponse en retour suffisamment précise pour savoir s'il a réussi,
+        - Mettre à jour un personnage de son choix,
+        - Supprimer n'importe quel personnage, avec une pop-up de confirmation;
+
+## ```Partie 3: Implémenter l'ajout de fichier```
+
+### 9. Préparation de la partie backend
+    - A la racine du backend, il nous faut créer le dossier public:
+        - A l'intérieur duquel nous créérons:
+            - un dossier uploads;
+            - un dossier tmp;
+
+### 10. Installation et utilisation de la dépendance multer
+    - Installation la dépendance ```multer``` dans la partie backend, puis:
+        - Créer un fichier uploadRouter.route.js, dans lequel il faudra écrire les lignes de code nécessaires pour obtenir une route permettant le téléchargement d'une image.
+        - Puis, il nous faut créer une fonction / middleware `uploadController` (le fichier peut être stocké dans le dossier controller). Elle te servira notamment à gérer le renommage du fichier provenant de la requête.
+
+        🤨 Un doute sur la manière de faire ? Regarde la quête sur l'upload de fichier avec multer !
+
+    - Enfin, tu peux tester dans Postman si ton téléchargement est fonctionnel, en veillant à sélectionner le format form-data, et appliquer le bon nommage pour la key 🔥
+
+### 11. Permettre à l'utilisateur de télécharger une image depuis la page Admin Panel
+    - La suite de ce challenge concernera la partie frontend. Ne la sous-estime pas, il y sera question d'affichages conditionnels, de feuilles de style, de variables d'états utilisées à bon escient... Bref, un super terrain d'entraînement avec React !
+
+    - Je te propose de créer un pattern permettant une expérience utilisateur agréable (perfectible, certes, mais agréable 😀). Voici le lien figma qui t'aidera à te le représenter:
+
+    ```https://www.figma.com/file/LmZN4c2DVjuBvDgk2KfCT0/Rick-%26-Morty-Fullstack-Challenge?type=design&mode=design&t=WMhBFYfrwKhDo6AW-1``` 
+
+    - Tu vas devoir transformer l'actuel composant CreationCharacterForm pour qu'il affiche un input de type checkbox à la place de l'input de type "text" (celui dédié aux images);
+    
+        - En d'autres termes, l'utilisateur doit voir sur son navigateur la proposition suivante:
+            `Voulez-vous télécharger une image ? 🔘 Yes  🔘 No`
+            - S'il clique sur oui, un input de type "file" doit apparaître. 
+            - S'il clique sur non, le même input de type "text" qu'auparavant doit apparaître.
+
+### 12. A partir de là...
+    - Je te laisse explorer, méditer et définir ta manière de faire. A noter qu'il n'y en a pas qu'une seule. Seulement, il y en aura des plus optimisées que d'autres.
+    - Je développe certaines stratégies dans ma vidéo sur la création de personnage, tu peux aller y jeter un oeil pour t'en inspirer 😉
+
+    Bonne chance 🚀

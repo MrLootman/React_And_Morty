@@ -1,6 +1,6 @@
 .admin-page {
-  height: 70vh;
-  margin: 10vh 30vw;
+  height: 75vh;
+  margin: 5vh 30vw;
   padding: 2rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
@@ -11,13 +11,18 @@
   }
 
   &_form {
-    form {
+    .creation-character_form {
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
       margin: 0 auto;
       max-width: 400px;
 
+      span {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
 
       input {
         font-size: 1rem;
@@ -54,6 +59,16 @@
 
         &:hover {
           background-color: #4287d8;
+        }
+      }
+
+      &_checkboxes {
+        display: flex;
+        justify-content: space-around;
+
+        li {
+          display: flex;
+          gap: 10px;
         }
       }
     }

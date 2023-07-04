@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import CreationCharacterForm from "../creationCharacterForm";
+import CreationCharacterForm from "../CreationCharacterForm";
 
 function AdminPage() {
     const [isDataSended, setIsDataSended] = useState(false);
+    const [selectedFile, setSelectedFile] = useState(undefined);
     const [formData, setFormData] = useState({
         name: "",
         status: "",
@@ -14,13 +15,36 @@ function AdminPage() {
     const navigate = useNavigate();
 
     const handleChange = (e) => {
-        setFormData((previousValue) => ({
-            ...previousValue, [e.target.name]: e.target.value
-        }))
+        if (e.target.type === "file") {
+            setFormData((previousValue) => ({
+                ...previousValue, [e.target.name]: `http://localhost:5000/uploads/${e.target.files[0].name}`
+            }))
+            setSelectedFile(e.target.files[0])
+        } else {
+            setFormData((previousValue) => ({
+                ...previousValue, [e.target.name]: e.target.value
+            }))
+        }
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        const data = new FormData()
+
+        if (selectedFile) {
+            data.append("image", selectedFile)
+
+            fetch("http://localhost:5000/upload", {
+                headers: {
+                    Accept: 'multipart/form-data',
+                },
+                method: "POST",
+                body: data
+            })
+                .catch((err) => {
+                    console.error(err)
+                })
+        }
 
         fetch("http://localhost:5000/characters", {
             headers: {
@@ -69,22 +93,3 @@ function AdminPage() {
 }
 
 export default AdminPage;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
