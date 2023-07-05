@@ -15,19 +15,19 @@ function CreationCharacterForm({ handleChange, formData, handleSubmit }) {
       />
       <input
         name="gender"
-        placeholder="status"
+        placeholder="gender"
         onChange={handleChange}
         value={formData.gender}
       />
       <input
         name="species"
-        placeholder="status"
+        placeholder="species"
         onChange={handleChange}
         value={formData.species}
       />
       <input
         name="image"
-        placeholder="status"
+        placeholder="image"
         onChange={handleChange}
         value={formData.image}
       />

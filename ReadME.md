@@ -8,16 +8,18 @@
 🔽🔽🔽      [Lien vers la vidéo YouTube](https://www.youtube.com/watch?v=AR2-vcDQ8_E)
 
         - Bien entendu, il manque encore quelques fonctionnalités, telles que: 
-            - Sécurisation côté front (avec une indication claire si un input a été mal renseigné)
-            - Sécurisation côté back (pour se protéger des injections SQL notamment)
+            - Sécurisation côté front (avec une indication claire si un input a été mal renseigné);
+            - Sécurisation côté back (pour se protéger des injections SQL notamment);
+            - Une possibilité de mettre à jour un personnage particulier
+            - Une possibilité d'en supprimer un...
         - L'heure n'étant pas au déploiement, je t'invite à poursuivre le challenge en mettant cela entre parenthèses 🙂
 
 ### 1. Préparation de la partie backend
 
     - A la racine du backend, il nous faut créer le dossier public:
         - A l'intérieur duquel nous créérons:
-            - un dossier uploads;
-            - un dossier tmp;
+            - un dossier tmp (zone d'accueil du fichier téléchargé avant de l'envoyer dans son emplacement définitif);
+            - un dossier uploads (qui sera le dossier d'accueil des fichiers téléchargés, en fin d'exécution du processus qu'implique multer);
 
 ### 2. Installation et utilisation de la dépendance multer
 
