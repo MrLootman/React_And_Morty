@@ -1,9 +1,10 @@
 import { useState, useRef } from "react";
 import ImageUploadInput from "./ImageUploadInput";
+import CancelUploadImage from "./CancelUploadImage";
 
 function CreationCharacterForm({ handleChange, formData, handleSubmit }) {
   const [isAgree, setIsAgree] = useState(null);
-  
+
   // On génère ici la référence dans le DOM, initialisée à null avant d'être reliée
   const fileInputRef = useRef(null);
 
@@ -20,6 +21,8 @@ function CreationCharacterForm({ handleChange, formData, handleSubmit }) {
   const handleButtonClick = () => {
     fileInputRef.current.click();
   };
+
+  if (isAgree === false) return <CancelUploadImage setIsAgree={setIsAgree} />;
 
   return (
     <form className="creation-character_form">
@@ -53,15 +56,6 @@ function CreationCharacterForm({ handleChange, formData, handleSubmit }) {
         />
       }
       {
-        isAgree === false &&
-        <input
-          name="image"
-          placeholder="image"
-          onChange={handleChange}
-          value={formData.image}
-        />
-      }
-      {
         isAgree === true &&
         <>
           <input
@@ -77,7 +71,7 @@ function CreationCharacterForm({ handleChange, formData, handleSubmit }) {
           {!formData.image ?
             <span>...</span>
             :
-            <span>{formData.image}</span>  
+            <span>{formData.image}</span>
           }
         </>
       }
