@@ -35,16 +35,16 @@
 
     - La suite de ce challenge concernera la partie frontend. Ne la sous-estime pas, il y sera question d'affichages conditionnels, de feuilles de style, de variables d'états utilisées à bon escient... Bref, un super terrain d'entraînement avec React !
 
-    - Je te propose de créer un pattern permettant une expérience utilisateur agréable (perfectible, certes, mais agréable 😀). Voici le lien figma qui t'aidera à te le représenter:
+    - Je te propose de créer un pattern permettant une expérience utilisateur agréable (perfectible, certes, mais agréable 😀). Voici le lien vers la vidéo YouTube qui t'aidera à te le représenter:
 
-🔽🔽🔽      [Lien vers le figma](https://www.figma.com/file/LmZN4c2DVjuBvDgk2KfCT0/Rick-%26-Morty-Fullstack-Challenge?type=design&mode=design&t=WMhBFYfrwKhDo6AW-1) 
+🔽🔽🔽      [Lien vers la vidéo YouTube](https://www.youtube.com/watch?v=rURZ1iCKym0) 
 
     - Tu vas devoir transformer l'actuel composant CreationCharacterForm pour qu'il affiche un input de type checkbox à la place de l'input de type "text" (celui dédié aux images);
     
         - En d'autres termes, l'utilisateur doit voir sur son navigateur la proposition suivante:
             `Voulez-vous télécharger une image ? 🔘 Yes  🔘 No`
             - S'il clique sur oui, un input de type "file" doit apparaître. 
-            - S'il clique sur non, le même input de type "text" qu'auparavant doit apparaître.
+            - S'il clique sur non, un message apparaît nous avertissant que la création n'est pas possible sans image, ainsi qu'un bouton nous permettant de revenir à l'étape précédente.
 
 ### 4. A partir de là...
 
