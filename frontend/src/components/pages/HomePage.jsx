@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react";
 import RickAndMortyCard from "../RickAndMortyCard";
+import useGet from "../hook/useGet";
 
 function HomePage() {
     const [data, setData] = useState([]);
     const [selectedValue, setSelectedValue] = useState("...");
     
-    // fetch("https://rickandmortyapi.com/api/character")
+    useGet("characters", setData);
 
-    useEffect(() => {
-        fetch("http://localhost:5000/characters")
-            .then((response) => response.json())
-            .then((res) => setData(res))
-            .catch((err) => console.error(err))
-    }, [])
+    // useEffect(() => {
+    //     fetch("http://localhost:5000/characters")
+    //         .then((response) => response.json())
+    //         .then((res) => setData(res))
+    //         .catch((err) => console.error(err))
+    // }, [])
 
     function handleChange(e) {
         setSelectedValue(e.target.value)

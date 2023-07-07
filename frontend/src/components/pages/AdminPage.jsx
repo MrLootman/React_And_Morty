@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import CreationCharacterForm from "../CreationCharacterForm";
 
 function AdminPage() {
+    const navigate = useNavigate();
     const [isDataSended, setIsDataSended] = useState(false);
     const [selectedFile, setSelectedFile] = useState(undefined);
     const [formData, setFormData] = useState({
@@ -12,17 +13,18 @@ function AdminPage() {
         species: "",
         image: ""
     });
-    const navigate = useNavigate();
 
     const handleChange = (e) => {
-        if (e.target.type === "file") {
+        const { name, value, type, files } = e.target;
+
+        if (type === "file") {
             setFormData((previousValue) => ({
-                ...previousValue, [e.target.name]: `http://localhost:5000/uploads/${e.target.files[0].name}`
+                ...previousValue, [name]: `http://localhost:5000/uploads/${files[0].name}`
             }))
-            setSelectedFile(e.target.files[0])
+            setSelectedFile(files[0])
         } else {
             setFormData((previousValue) => ({
-                ...previousValue, [e.target.name]: e.target.value
+                ...previousValue, [name]: value
             }))
         }
     }
@@ -66,28 +68,28 @@ function AdminPage() {
             })
     }
 
-    return (
+    // Section des return
+
+    if (isDataSended) return (
+        <li className="admin-page_message_success">
+            <div className="progress-bar"></div>
+            <p>Personnage créé !</p>
+        </li>
+    );
+
+    if (!isDataSended) return (
         <ul className="admin-page">
-            {!isDataSended &&
-                <>
-                    <li className="admin-page_title">
-                        <h2>Créez votre personnage</h2>
-                    </li>
-                    <li className="admin-page_form">
-                        <CreationCharacterForm
-                            handleChange={handleChange}
-                            handleSubmit={handleSubmit}
-                            formData={formData}
-                        />
-                    </li>
-                </>
-            }
-            {isDataSended &&
-                <li className="admin-page_message_success">
-                    <div className="progress-bar"></div>
-                    <p>Personnage créé !</p>
-                </li>
-            }
+            <li className="admin-page_title">
+                <h2>Créez votre personnage</h2>
+            </li>
+            <li className="admin-page_form">
+                <CreationCharacterForm
+                    handleChange={handleChange}
+                    handleSubmit={handleSubmit}
+                    formData={formData}
+                />
+            </li>
+
         </ul >
     )
 }
