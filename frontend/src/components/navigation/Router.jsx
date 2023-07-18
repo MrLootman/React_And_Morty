@@ -12,7 +12,7 @@ function Router() {
             <Route path="/admin" element={<AdminPage />} />
             <Route path="/character/:id" element={<RickAndMortyDetails />} />
             <Route path="/login" element={<LoginPage />} />
-            <Route path="/registration" element={<RegistrationPage />} />
+            <Route path="/register" element={<RegistrationPage />} />
         </Routes>
     )
 }
