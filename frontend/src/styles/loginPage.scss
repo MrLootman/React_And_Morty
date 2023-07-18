@@ -1,0 +1,29 @@
+.login_page {
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  li {
+    img {
+      animation: zoom infinite 8s ease-in-out;
+    }
+
+    form {
+      .recognition-area {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+        justify-content: flex-start;
+
+        input {
+          width: 1rem;
+        }
+      }
+    }
+    p {
+      text-align: center;
+      margin: 24px;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.registration_page {
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  li {
+    width: 30%;
+    
+    img {
+      animation: zoom infinite 8s ease-in-out;
+      height: 250px;
+    }
+  }
+}

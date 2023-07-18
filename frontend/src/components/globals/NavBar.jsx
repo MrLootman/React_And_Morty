@@ -1,4 +1,5 @@
-import { NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom";
+import { LuLogIn } from "react-icons/lu";
 
 function NavBar() {
     return (
@@ -6,15 +7,13 @@ function NavBar() {
             <ul>
                 <li>
                     <NavLink to="/">
-                        <h2>Rick and Morty</h2>
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink to="/admin">
-                        <h2>Admin Panel</h2>
+                        <img src="https://repository-images.githubusercontent.com/120371205/b6740400-92d4-11ea-8a13-d5f6e0558e9b" alt="Rick and Morty logo" />
                     </NavLink>
                 </li>
             </ul>
+            <NavLink to="/login">
+                <LuLogIn className="login-logo" />
+            </NavLink>
         </nav>
     )
 }

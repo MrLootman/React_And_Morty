@@ -1,9 +1,10 @@
 .navbar {
-    background-color: #FFD90F;
     box-shadow: 0 1px 2px 2px gray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     
     ul {
-        padding-block: 24px;
         display: flex;
         align-items: center;
         gap: 24px;
@@ -13,6 +14,21 @@
             h2, a {
                 font-size: 30px;
             }
+
+            img {
+                height: 80px;
+            }
+        }
+    }
+
+    svg {
+        margin: 0 24px 0 0;
+        transform: scale(2.5);
+        transition: transform .2s;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(3);
         }
     }
 }
