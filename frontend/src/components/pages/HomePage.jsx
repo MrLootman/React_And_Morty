@@ -31,6 +31,8 @@ function HomePage() {
                 }
             </select>
 
+            <hr />
+
             <ul className="home-page_ul">
                 {data && data
                     .filter((el) => selectedValue === "..." || selectedValue === el.name)
@@ -40,7 +42,6 @@ function HomePage() {
                         )
                     })
                 }
-
             </ul>
         </main>
     )

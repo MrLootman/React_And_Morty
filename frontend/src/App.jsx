@@ -4,8 +4,8 @@ import NavBar from "./components/globals/NavBar"
 function App() {
   return (
     <div className="app">
-      <NavBar />
-      <Router />
+        <NavBar />
+        <Router />
     </div>
   )
 }

@@ -8,8 +8,10 @@ dotenv.config();
 const app = express();
 const port = process.env.BACKEND_PORT;
 
+// Import des différents routers:
 import rickCharacterRouter from "./src/routes/rickAndMortyCharacter.route.js";
 import uploadRouter from "./src/routes/upload.router.js";
+import userRouter from "./src/routes/user.route.js";
 
 const corsOptions = {
     origin: process.env.FRONTEND_URL,
@@ -28,7 +30,8 @@ app.get("/", (req, res) => {
 });
 
 app.use("/characters", rickCharacterRouter);
-app.use("/upload", uploadRouter)
+app.use("/upload", uploadRouter);
+app.use("/users", userRouter);
 
 app.listen(port, () => {
     console.log(`Server is actually running on port ${port}`)

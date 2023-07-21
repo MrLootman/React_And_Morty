@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import ProtectedRoutes from "./ProtectedRoutes";
 import HomePage from "../pages/HomePage";
 import RickAndMortyDetails from "../pages/RickAndMortyDetails";
 import AdminPage from "../pages/AdminPage";
@@ -8,11 +9,12 @@ import RegistrationPage from "../pages/RegistrationPage";
 function Router() {
     return (
         <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/admin" element={<AdminPage />} />
-            <Route path="/character/:id" element={<RickAndMortyDetails />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegistrationPage />} />
+
+            <Route path="/admin" element={<ProtectedRoutes element={<AdminPage />} />} />
+            <Route path="/character/:id" element={<ProtectedRoutes element={<RickAndMortyDetails />} />} />
+            <Route path="/" element={<ProtectedRoutes element={<HomePage />} />} />
         </Routes>
     )
 }
