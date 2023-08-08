@@ -12,9 +12,27 @@ function Router() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegistrationPage />} />
 
-            <Route path="/admin" element={<ProtectedRoutes element={<AdminPage />} />} />
-            <Route path="/character/:id" element={<ProtectedRoutes element={<RickAndMortyDetails />} />} />
-            <Route path="/" element={<ProtectedRoutes element={<HomePage />} />} />
+            <Route
+                path="/admin"
+                element={
+                    <ProtectedRoutes>
+                        <AdminPage />
+                    </ProtectedRoutes>}
+            />
+            <Route
+                path="character/:id"
+                element={
+                    <ProtectedRoutes>
+                        <RickAndMortyDetails />
+                    </ProtectedRoutes>}
+            />
+            <Route
+                path="/"
+                element={
+                    <ProtectedRoutes>
+                        <HomePage />
+                    </ProtectedRoutes>}
+            />
         </Routes>
     )
 }

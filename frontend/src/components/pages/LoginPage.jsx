@@ -1,7 +1,55 @@
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import { UserContext } from "../contexts/UserContext";
 
 function LoginPage() {
+  const navigate = useNavigate();
+  const { user, setUser } = useContext(UserContext);
+  const [postData, setPostData] = useState({
+    email: "",
+    password: ""
+  })
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    if (!postData.email || !postData.password) {
+      console.log("No way")
+    }
+
+    const controller = new AbortController();
+    const signal = controller.signal;
+
+    fetch("http://localhost:5000/users/login/", {
+      signal,
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(postData)
+    })
+      .then(res => res.json())
+      .then(({ token }) => {
+        localStorage.setItem("token", token);
+        setUser(token);
+      })
+      .catch(err => console.error(err));
+  }
+
+  useEffect(() => {
+    console.log("Mon user", user)
+    if (user !== undefined) {
+      navigate("/");
+    }
+  }, [user]);
+
+  function handleChange(e) {
+    setPostData((previousValue) => ({
+      ...previousValue, [e.target.name]: e.target.value
+    }))
+  }
+
+
   return (
     <ul className="login_page">
       <li>
@@ -9,23 +57,35 @@ function LoginPage() {
       </li>
 
       <li>
-        <form>
-          <input type="text" placeholder="Email" />
-          <input type="password" placeholder="Password" />
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Email"
+            name="email"
+            value={postData.email}
+            onChange={handleChange}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            value={postData.password}
+            onChange={handleChange}
+          />
           <div className="recognition-area">
             <input type="checkbox" />
             <label htmlFor="recognize">Remember me ?</label>
           </div>
           <button type="submit">Envoyer</button>
         </form>
-        
+
         <p>
           Vous n'avez pas compte ?
           <NavLink to={"/register"}>
             <span>
               {" "}Inscrivez-vous !
             </span>
-          </NavLink> 
+          </NavLink>
         </p>
       </li>
     </ul>

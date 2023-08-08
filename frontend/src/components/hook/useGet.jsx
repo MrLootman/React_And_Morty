@@ -10,6 +10,6 @@ export default function useGet(endpoint, setData) {
     fetch(`${baseUrl}/${endpoint}`, { signal })
       .then((res) => res.json())
       .then((setData))
+    // return () => signal.abort();
   }, []);
-  // return () => signal.abort();
 }
