@@ -13,6 +13,13 @@ a {
     color: black;
 }
 
+// Variables:
+$main-font: 'Creepster', cursive;
+
+p, h1, h2, h3, h4, h5, h6 {
+  font-family: $main-font;
+}
+// Main button:
 button {
     cursor: pointer;
     color: white;

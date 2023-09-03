@@ -1,0 +1,15 @@
+.footer {
+  display: flex;
+  height: 20vh;
+  gap: 10%;
+  align-items: center;
+  justify-content: center;
+
+  li {
+    margin: 10vh 0 5vh 0;
+    svg {
+      transform: scale(3);
+      transition: transform .2s;
+    }
+  }
+}

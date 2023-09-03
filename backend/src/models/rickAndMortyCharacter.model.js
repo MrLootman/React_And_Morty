@@ -10,6 +10,7 @@ export const findById = async (id) => {
 
 export const insertCharacter = async (name, status, gender, species, image) => {
   return await database.query(
-    "INSERT INTO rick_and_morty_character (name, status, gender, species, image) VALUES (?, ?, ?, ?, ?)",
+    `INSERT INTO rick_and_morty_character (name, status, gender, species, image) 
+    VALUES (?, ?, ?, ?, ?)`,
     [name, status, gender, species, image])
 }

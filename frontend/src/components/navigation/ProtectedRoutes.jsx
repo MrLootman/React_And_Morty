@@ -1,30 +1,22 @@
-import { useEffect } from "react";
 import { Navigate } from "react-router-dom";
-import { useContext } from "react";
-import { UserContext } from "../contexts/UserContext";
+import { useEffect, useState } from "react";
 
 export default function ProtectedRoutes({ children }) {
-  const { user, setUser } = useContext(UserContext);
-
-  console.log("Quel est le type de user", typeof user);
+  const [isTokenExists, setIsTokenExists] = useState(null);
 
   useEffect(() => {
     setTimeout(() => {
       if (localStorage.getItem("token")) {
-        setUser({ name: "Nico", email: "nico@gmail.com" })
+        setIsTokenExists(true);
       } else {
-        setUser(null);
+        setIsTokenExists(false);
       }
-    }, 2000)
-  }, [])
+    }, 500)
+  }, []);
 
-  if (user === undefined) {
-    return null
-  }
+  if (isTokenExists === null) return null;
 
-  if (!user) {
-    return <Navigate to="/login" />
-  }
+  if (!isTokenExists) return <Navigate to="/login" />
 
   return children;
 }

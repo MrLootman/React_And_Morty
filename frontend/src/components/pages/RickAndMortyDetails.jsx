@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import Footer from "../globals/Footer";
 
 function RickAndMortyDetails() {
     const [data, setData] = useState(undefined);
@@ -14,6 +15,7 @@ function RickAndMortyDetails() {
     }, [])
 
     return (
+        <>
         <ul className="home-page_ul">
             {data !== undefined &&
             <li className="rick-and-morty-card">
@@ -25,6 +27,8 @@ function RickAndMortyDetails() {
             </li>
             }
         </ul>
+        <Footer />
+        </>
     )
 }
 

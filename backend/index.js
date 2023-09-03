@@ -6,6 +6,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
+
 const port = process.env.BACKEND_PORT;
 
 // Import des différents routers:
@@ -17,21 +18,16 @@ const corsOptions = {
     origin: process.env.FRONTEND_URL,
     methods: ["POST"],
     optionSuccessStatus: 200,
+    credentials: true
 }
 
+app.use(express.json());
 app.use(cors(corsOptions));
-
 app.use(express.static("./public"));
 
-app.use(express.json());
-
-app.get("/", (req, res) => {
-    res.send("Bonjour les amis !")
-});
-
+app.use("/users", userRouter);
 app.use("/characters", rickCharacterRouter);
 app.use("/upload", uploadRouter);
-app.use("/users", userRouter);
 
 app.listen(port, () => {
     console.log(`Server is actually running on port ${port}`)

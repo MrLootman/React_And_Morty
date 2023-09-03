@@ -1,0 +1,26 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Contexte",
+  "steps": [
+    {
+      "file": "frontend/src/components/contexts/UserContext.jsx",
+      "description": "Comme tu peux le constater, la variable d'état user a une valeur undefined à l'origine.\r\nC'est seulement lorsqu'une authentification sera réussie que ce state changera de valeur, et recevra alors un objet contenant les données de l'utilisateur (nom, prénom... mais surtout pas le mot de passe !).",
+      "line": 6
+    },
+    {
+      "file": "frontend/src/components/pages/LoginPage.jsx",
+      "description": "Voici la fonction qui traite la tentative d'authentification.",
+      "line": 14
+    },
+    {
+      "file": "frontend/src/components/navigation/Router.jsx",
+      "description": "Cette fonction a pour but de vérifier la validité du token enregistré dans le localStorage.\r\nEn effet, bien que présent dans l'espace mémoire du navigateur, le token pourrait être invalide, ou encore avoir expiré, auquel cas on force volontairement force le renvoi vers la page Login. \r\nEn revanche, si le token est valide, alors le state incorporé au contexte peut être doté des informations de l'utilisateur.",
+      "line": 17
+    },
+    {
+      "file": "frontend/src/components/navigation/Router.jsx",
+      "description": "Pourquoi dans useEffect avec un tableau dépendance vide ?\r\nTout simplement car nous voulons systématiquement exécuter une fois la fonction restoreUser(), au montage du composant Router.\r\nA noter que ce composant est nécessairement monté quelque soit la page sur laquelle nous nous trouvons; c'est pourquoi la fonction se trouve ici.",
+      "line": 15
+    }
+  ]
+}

@@ -1,34 +1,40 @@
 .navbar {
     box-shadow: 0 1px 2px 2px gray;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    
+
     ul {
         display: flex;
+        justify-content: space-between;
         align-items: center;
         gap: 24px;
-        margin-left: 24px;
-
+        
+        
         li {
-            h2, a {
+            &:last-child {
+                display: flex;
+                gap: 34px;
+                margin-right: 24px;
+            }
+
+            h2,
+            a {
                 font-size: 30px;
             }
 
             img {
                 height: 80px;
             }
+
         }
     }
 
     svg {
         margin: 0 24px 0 0;
-        transform: scale(2.5);
+        transform: scale(2);
         transition: transform .2s;
         cursor: pointer;
 
         &:hover {
-            transform: scale(3);
+            transform: scale(2.4);
         }
     }
 }

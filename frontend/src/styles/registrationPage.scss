@@ -13,3 +13,17 @@
     }
   }
 }
+
+@media screen and (max-width: 600px) {
+  .registration_page {
+    justify-content: center;
+
+    li {
+      width: 70%;
+      
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+}

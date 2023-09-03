@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import CreationCharacterForm from "../CreationCharacterForm";
+import AdminPanel from "../admin/AdminPanel";
+import AdminCreation from "../admin/AdminCreation";
 
 function AdminPage() {
     const navigate = useNavigate();
     const [isDataSended, setIsDataSended] = useState(false);
+    const [selectedPath, setSelectedPath] = useState("");
     const [selectedFile, setSelectedFile] = useState(undefined);
     const [formData, setFormData] = useState({
         name: "",
@@ -13,6 +15,10 @@ function AdminPage() {
         species: "",
         image: ""
     });
+
+    const handleSelection = (item) => {
+        setSelectedPath(item)
+    }
 
     const handleChange = (e) => {
         const { name, value, type, files } = e.target;
@@ -51,7 +57,8 @@ function AdminPage() {
         fetch("http://localhost:5000/characters", {
             headers: {
                 'Accept': "application/json",
-                'Content-Type': "application/json"
+                'Content-Type': "application/json",
+                'X-CSRF-Token': req.session.csrfToken
             },
             method: "POST",
             body: JSON.stringify(formData)
@@ -68,29 +75,32 @@ function AdminPage() {
             })
     }
 
-    // Section des return
-
     if (isDataSended) return (
-        <li className="admin-page_message_success">
-            <div className="progress-bar"></div>
-            <p>Personnage créé !</p>
-        </li>
+        <>
+            <AdminPanel />
+            <li className="admin-page_message_success">
+                <div className="progress-bar"></div>
+                <p>Personnage créé !</p>
+            </li>
+        </>
     );
 
-    if (!isDataSended) return (
-        <ul className="admin-page">
-            <li className="admin-page_title">
-                <h2>Créez votre personnage</h2>
-            </li>
-            <li className="admin-page_form">
-                <CreationCharacterForm
-                    handleChange={handleChange}
-                    handleSubmit={handleSubmit}
-                    formData={formData}
-                />
-            </li>
+    if (selectedPath === "add") {
+        return (
+            <AdminCreation
+                handleChange={handleChange}
+                handleSubmit={handleSubmit}
+                formData={formData}
+            />
+        )
+    }
 
-        </ul >
+    if (!isDataSended) return (
+        <>
+            <AdminPanel
+                handleSelection={handleSelection}
+            />
+        </>
     )
 }
 

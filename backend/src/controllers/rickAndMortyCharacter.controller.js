@@ -40,7 +40,7 @@ const createCharacter = (req, res) => {
     insertCharacter(name, status, gender, species, image)
         .then(([result]) => {
             if (result.affectedRows) {
-                return res.status(201).send(`The character with the name ${name} has been created successfully`)
+                return res.status(201).send(`${name} has been created successfully`)
             }
             return res.status(404).send("An error occured while creating this character")
         })

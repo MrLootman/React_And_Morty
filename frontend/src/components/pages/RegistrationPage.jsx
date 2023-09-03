@@ -1,6 +1,11 @@
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from "react-router-dom";
+import { validatorSchema } from "../../utils/validator";
 
 function RegistrationPage() {
+    const navigate = useNavigate();
     const [postData, setPostData] = useState({
         firstname: "",
         lastname: "",
@@ -9,10 +14,14 @@ function RegistrationPage() {
     })
 
     function handleSubmit(e) {
+        const id = toast.loading("Please wait...")
+
         e.preventDefault();
 
-        if (!postData.firstname) {
-            console.log("No way")
+        const { error, value } = validatorSchema.validate(postData);
+
+        if (error) {
+            toast.update(id, { render: `${error} 🧐`, type: "error", isLoading: false, hideProgressBar: false, autoClose: 5000 })
             return;
         }
 
@@ -23,8 +32,27 @@ function RegistrationPage() {
             },
             body: JSON.stringify(postData)
         })
-        .then(() => console.log("Envoi réussi"))
-        .catch(err => console.error(err));
+            .then((response) => {
+                if (response.status === 403) {
+                    toast.update(id, { render: "Impossible to register 🧐", type: "error", isLoading: false, hideProgressBar: false, autoClose: 5000 })
+                } else {
+                    toast.update(id, { render: "Everything is OK 😃 !", type: "success", isLoading: false, hideProgressBar: false, autoClose: 5000 })
+
+                    setPostData({
+                        firstname: "",
+                        lastname: "",
+                        email: "",
+                        password: ""
+                    })
+
+                    setTimeout(() => {
+                        navigate("/login");
+                    }, 5000)
+                }
+            })
+            .catch(err => {
+                console.error(err);
+            });
     }
 
     function handleChange(e) {
@@ -35,35 +63,36 @@ function RegistrationPage() {
 
     return (
         <ul className="registration_page">
+            <ToastContainer />
             <li>
                 <form onSubmit={handleSubmit}>
-                    <input 
-                        type="text" 
+                    <input
+                        type="text"
                         placeholder="Prénom"
                         name="firstname"
                         value={postData.firstname}
                         onChange={handleChange}
                     />
-                    <input 
-                        type="text" 
+                    <input
+                        type="text"
                         placeholder="Nom"
                         name="lastname"
                         value={postData.lastname}
-                        onChange={handleChange} 
+                        onChange={handleChange}
                     />
-                    <input 
-                        type="text" 
+                    <input
+                        type="text"
                         placeholder="Email"
                         name="email"
                         value={postData.email}
-                        onChange={handleChange}  
+                        onChange={handleChange}
                     />
-                    <input 
-                        type="password" 
+                    <input
+                        type="password"
                         placeholder="Password"
                         name="password"
                         value={postData.password}
-                        onChange={handleChange} 
+                        onChange={handleChange}
                     />
                     <button type="submit">Envoyer</button>
                 </form>

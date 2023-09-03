@@ -1,5 +1,5 @@
 .login_page {
-  height: 85vh;
+  height: 80vh;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -9,21 +9,39 @@
       animation: zoom infinite 8s ease-in-out;
     }
 
-    form {
-      .recognition-area {
-        display: flex;
-        gap: 24px;
-        align-items: center;
-        justify-content: flex-start;
 
-        input {
-          width: 1rem;
-        }
+    p {
+      span {
+        color: #53abee;
       }
     }
-    p {
-      text-align: center;
-      margin: 24px;
+
+  form {
+    .recognition-area {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      justify-content: flex-start;
+
+      input {
+        width: 1rem;
+      }
+    }
+  }
+
+  p {
+    text-align: center;
+    margin: 24px;
+  }
+}
+}
+
+@media screen and (max-width: 800px) {
+  .login_page {
+    justify-content: center;
+    
+    &_logo {
+      display: none;
     }
   }
 }
