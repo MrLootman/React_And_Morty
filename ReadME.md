@@ -1,55 +1,65 @@
-# Rick and Morty : Côté serveur
-## ```Partie 1: Mise en place des fondamentaux```
+### Entraînement avec React.js
 
-#### Résumé des étapes 🖥️ :
 
-### 1. Initialisation d'un serveur express;
-    - Installation de la dépendance express;
-    - Instanciation d'express;
-    - Création de notre première route;
-    - Vérification du caractère fonctionnel de notre serveur (simplement pour vérifier que le serveur fonctionne. Tu peux utiliser Postman pour toutes les vérifications !);
-    - Installation de la dépendance nodemon (tu te souviens à quoi ça sert ?);
+## __Préambule__ :
+#### Te voilà prêt à démarrer. Si tu tentes la commande :
 
-### 2. Création de notre base de donnée :
-    - Elaboration de notre script au format sql;
-        - Création de la base de donnée rick_and_morty_db
-        - Création de la table rick_character;
-        - Insertion des premières données (un jeu de donnée avec quatre personnages sera suffisant, mais tu peux en mettre autant que tu veux);
+npm run dev
 
-### 3. Connexion entre le serveur et la base de donnée :
-    - Installation des dépendances dotenv et mysql2;
-        - Rédaction de nos variables d'environnements;
-        - Création d'une copie des variables attendues (.env.sample);
+#### Tu constateras qu'il n'y a rien d'affiché. C'est normal : J'ai nettoyé le fichier App.jsx, et j'ai supprimé les fichiers .css. En résumé : il n'y a rien d'autre qu'une <div> parente.
 
-    - Création d'un fichier migration.js:
-        - Etablir la connexion avec la base de donnée;
-        - Exécuter le script;
-        - Vérifier que les données sont bien enregistrées;
+#### Pour cet exercice, tu vas devoir créer un petit projet permettant d'afficher tous les Simpsons, et de les filtrer. Voici les étapes :
 
-## ```Partie 2: Requêtes et réponses```
+  ## 0. Voici le lien vers le template, pour que tu aies une idée visuelle de ce qui devra être créé :
 
-### 4. Mise en place d'une architecture saine
+  https://www.figma.com/file/3ApwhdewT0QqPHSxr1IRry/Untitled?type=design&node-id=0-1&mode=design&t=5P2kN4ZhZ5FSJE8F-0
+ 
+  #### Tu peux commencer à créer ton architecture (l'organisation des fichiers), et le CSS qui sera associé à chaque composant. Je t'invite à installer et utiliser SCSS dans ton projet :
 
-    - Créer les dossiers nécessaires:
-        - Création du dossier src, à l'intérieur duquel se tiendront:
-            - Le fichier datasource.js;
-            - Le dossier routes;
-            - Le dossier controllers;
+  *npm install sass*
 
-    - Le fichier datasource.js doit contenir le code nécessaire pour se connecter à la base de donnée.
-### 5. Création du Create - Read - Update - Delete pour la table rick_character
+  #### Il te faudra donc créer un dossier style dans le dossier src/, lequel contiendra toutes les fiches de styles que tu créeras.
 
-    - Elaboration du CRUD pour le gestionnaire des personnages:
-        - Création d'un fichier rickAndMortyCharacter.controller.js;
-            - Création d'une fonction "getAllCharacters",
-            - Création d'une fonction "getCharacterById",
-            - Création d'une fonction "updateCharacter",
-            - Création d'une fonction "deleteCharacter",
-            - Création d'une fonction "createCharacter";
-    
-    - Elaboration des routes liées à ce gestionnaire précis:
-        - Cinq fonctions = cinq routes;
+  ## 1. Petite aide pour composer l'architecture : Le composant App doit importer les composants suivants :
+##    ---> Header;
+##    ---> HomePage;
+##    ---> ContactPage;
+##    ---> Footer;
 
-### 6. Correction des bugs et phase de test
+  ##  `*1.bis : __Rappel :__ C'est le composant HomePage qui sera le propriétaire des données provenant de l'API.`
+  ## `*1.ter : __A ce stade...__ Tu devras créer le header et le footer par toi-même, conformément à la maquette.` 
 
-    - Tester les routes et vérifier leur bon fonctionnement 🔥
+  ## 2. Dans le composant HomePage, tu vas désormais fetcher ce qui vient de l'API (je te donne le lien dans quelques instants). Pour cela, tu as deux solutions :
+    💡 Télécharger la librairie __axios__ (npm install axios);
+    💡 Utiliser la méthode fetch, qui est nativement présente en JavaScript.
+  ### Si ta mémoire te fait défaut, ou si tu veux explorer, je t'invite à lire la documentation d'une des deux méthodes. Tu peux aussi remettre le nez dans les quêtes pour voir comment faire 😊
+
+  ##  `*2.bis : __Le endpoint__ de l'API sera le suivant ; c'est cette adresse qu'il faudra interroger pour récupérer les données :`
+##    ---> https://thesimpsonsquoteapi.glitch.me/quotes?count=20
+  ## `* Comme tu peux le constater, on interroge le endpoint /quotes, et on ajoute une query permettant de fetcher 20 informations.`
+
+  ### Tu es bloqué ? 🧐 Revisite tes quêtes, ou regarde comment on fetch des données en React.js.
+
+  ## 3. Stocke ces données dans un state (ou variable d'état) nommé data.
+  ###   `* 3.bis : A l'initialisation, la valeur du state doit être un tableau vide.`
+  ###   `*3.ter : Un petit console.log te permettra de savoir si tu as bien récupéré les données ✅`
+
+  ## 4. 🔍️ Désormais, il est temps de faire fonctionner ta mémoire 🧠, et de faire tes propres recherches. Ton objectif est de mapper le tableau de Simpsons, pour retourner une carte par personnage. Il est volontaire de ma part de ne pas te guider davantage, pour que ta réussite soit le résultat de tes recherches et de ta curiosité 😊
+  ###   `*4.bis : Un petit indice tout de même : tu dois créer un composant Card.`
+
+  ## 5. ... Après cette longue phase de travail, tu devrais avoir une liste de cartes, au nombre de 20. Applique le style qu'il faut pour pour être au plus proche de la maquette.
+
+  ## 6. Il est l'heure d'ajouter de l'intéractivité à ta page. Si tu ne l'as pas fait, tu peux créer un input (cf. maquette). Cet input doit filtrer les informations présentes à l'écran.
+  ### `* 6.bis : Un exemple de User Story :`
+  #### `[US-??] En tant qu'utilisateur, je veux pouvoir filtrer dynamiquement les cartes affichées dans la HomePage`
+  #### `[US-??bis] En tant qu'utilisateur, mon filtre doit tolérer les lettres en minuscule (ex: J'écris "homer" dans l'input, les cartes avec Homer doivent apparaître)`
+
+  ## 7. Rendus à la septième étape, il est temps de te concentrer sur la création du formulaire. Regarde la maquette, et construit la page conformément à celle-ci.
+  ### `* 7.bis : Ton formulaire n'envoie rien pour le moment, et c'est normal. Ce qu'on souhaite, c'est que les éléments soient physiquement présents sur l'image`
+
+  ## 8. Il est temps d'installer la dépendance suivante :
+  `*    ---> npm install react-router-dom`
+  ### Tu l'as compris : Il faut donner à l'utilisateur la possibilité de changer de page. Je te laisse replonger dans ce que tu as appris dans les quêtes concernant la navigation en React.js, et ses spécificités.
+
+  ## 9. Nouvelle étape, nouveau palier difficulté : Les cartes doivent être cliquables, et renvoyer vers une page par id.
+  ### `* 9.bis : Tu te rappelles de useParams ?`
