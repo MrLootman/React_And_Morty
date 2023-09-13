@@ -1,7 +1,21 @@
+// Variables globales ::after
+
+$primary-font: 'Courgette', cursive;
+$secondary-font: 'Open Sans', sans-serif;
+
+$primary-color: #272B33;
+$secondary-color: #FBFBFB;
+$tertiary-color: #3C3E44;
+$quaternary-color: #9e9e9e;
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    background-color: $primary-color;
 }
 
 ul, li {
@@ -11,4 +25,21 @@ ul, li {
 a {
     text-decoration: none;
     color: black;
+}
+
+h2 {
+    font-family: $secondary-font;
+    font-size: 3rem;
+}
+
+p {
+    font-family: $primary-font;
+}
+
+p, h2 {
+    color: $secondary-color;
+}
+
+span {
+    color: $quaternary-color;
 }

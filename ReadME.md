@@ -4,7 +4,6 @@
 ## Cette partie se concentrera sur l'élaboration de la partie backend. En effet, jusqu'à présent, tes données proviennent d'une API, depuis laquelle tu extraits un objet contenant tout ce dont tu as besoin. 
 ## Il s'agira désormais de créer ton serveur et ta base de données relationnelle pour ne plus dépendre de l'API ! Le dossier backend est quasiment vide, et ce sera à toi de composer toute l'architecture (rien de mieux pour apprendre 😄). Voici donc un récapitulatif des étapes:
 
-
 ## ```Partie 1: Mise en place des fondamentaux```
 
 #### Résumé des étapes 🖥️ :

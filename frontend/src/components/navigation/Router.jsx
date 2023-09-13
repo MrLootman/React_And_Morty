@@ -1,14 +1,14 @@
 import { Routes, Route } from "react-router-dom";
 import HomePage from "../pages/HomePage";
-import RickAndMortyDetails from "../pages/RickAndMortyDetails";
-import AdminPage from "../pages/AdminPage";
+import CharacterPage from "../pages/CharacterPage";
+import ContactPage from "../pages/ContactPage";
 
 function Router() {
     return (
         <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/admin" element={<AdminPage />} />
-            <Route path="/character/:id" element={<RickAndMortyDetails />} />
+            <Route path="/character/:id" element={<CharacterPage />} />
+            <Route path="/contact" element={<ContactPage />} />
         </Routes>
     )
 }

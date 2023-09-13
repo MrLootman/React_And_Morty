@@ -1,4 +1,6 @@
-import { NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom";
+import RickLogo from "../../assets/rick_logo.png";
+import ContactIcon from "../../assets/contact_icon.png";
 
 function NavBar() {
     return (
@@ -6,12 +8,12 @@ function NavBar() {
             <ul>
                 <li>
                     <NavLink to="/">
-                        <h2>Rick and Morty</h2>
+                        <img src={RickLogo} alt="Rick and Morty logo to reach the HomePage" />
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/admin">
-                        <h2>Admin Panel</h2>
+                    <NavLink to="/contact">
+                        <img src={ContactIcon} alt="Icon to reach the contact page" />
                     </NavLink>
                 </li>
             </ul>

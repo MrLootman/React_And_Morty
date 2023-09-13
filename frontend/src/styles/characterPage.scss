@@ -1,0 +1,28 @@
+.rick-and-morty-article {
+    display: flex;
+    background-color: $tertiary-color;
+    border-radius: 1rem;
+    margin: 10vw;
+    overflow: hidden;
+
+    section {
+        &:last-child {
+            margin-inline: 5%;
+        }
+        p {
+            font-size: 1.5rem;
+            padding: 0.3rem 0;
+        }
+
+        h2 {
+            padding: 1rem;
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+    }
+
+}

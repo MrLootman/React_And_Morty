@@ -1,13 +1,26 @@
 .home-page {
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
+    min-height: 85vh;
     
     &_select {
         margin-top: 48px;
-        padding: 12px 48px;
+        padding: 8px 48px;
         font-size: 24px;
+        background-color: $secondary-color;
+
+
+        option {
+            background-color: $tertiary-color;
+            font-family: $secondary-font;
+            color: $secondary-color;
+            cursor: pointer;
+
+            &:hover {
+                box-shadow: 0 0 10px 100px #fff inset;
+            }
+        }
     }
 
     &_ul {
