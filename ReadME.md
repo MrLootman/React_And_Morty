@@ -2,13 +2,13 @@
 
 
 ## __Préambule__ :
-#### Te voilà prêt à démarrer. Si tu tentes la commande :
+#### Te voilà prêt à démarrer. Après t'être déplacé dans le dossier frontend, et après avoir installé les dépendances avec la commande `*npm install`, tu pourras tenter la commande :
 
-npm run dev
+`*npm run dev`
 
 #### Tu constateras qu'il n'y a rien d'affiché. C'est normal : J'ai nettoyé le fichier App.jsx, et j'ai supprimé les fichiers .css. En résumé : il n'y a rien d'autre qu'une <div> parente, et un commentaire à l'intérieur.
 
-#### Pour cet exercice, tu vas devoir créer un petit projet permettant d'afficher tous les Simpsons, et de les filtrer. Voici les étapes :
+#### Pour cet exercice, tu vas devoir créer un petit projet permettant d'afficher tous les personnages du dessin animé Rick and Morty, et de les filtrer. Voici les étapes :
 
   ## 0. Voici le lien vers le template, pour que tu aies une idée visuelle de ce qui devra être créé :
 
@@ -26,9 +26,10 @@ npm run dev
 ##    ---> ContactPage;
 ##    ---> Footer;
 
-  ##  `*1.bis : __Rappel :__ C'est le composant HomePage qui sera le propriétaire des données provenant de l'API.`
-  ## `*1.ter : __A ce stade...__ Tu devras créer le header et le footer par toi-même, conformément à la maquette.`
-  ## `*1.quater : __Côté architecture...__ Dans le dossier src/, je t'invite à structurer les éléments comme suit: Tous les composants finissant par "Page" seront dans un dossier "pages/" ; Tous les composants qui seront visibles sur toutes les pages seront dans un dossier globals/` 
+  ###  `*1.bis : __Rappel :__ C'est le composant HomePage qui sera le propriétaire des données provenant de l'API.`
+  ### `*1.ter : __A ce stade...__ Tu devras créer le header et le footer par toi-même, conformément à la maquette.`
+  ### `*1.quater : __Côté architecture...__ Dans le dossier src/, je t'invite à structurer les éléments comme suit: Tous les composants finissant par "Page" seront dans un dossier "pages/" ; Tous les composants qui seront visibles sur toutes les pages seront dans un dossier globals/`
+  ### `*1.quinter : __Besoin d'une aide visuelle ?...__ Il est tout à fait normal d'être en difficulté pour visualiser comment les composants vont s'imbriquer. Si tu as besoin d'une aide, tu peux installer l'extension VSCode excalidraw, puis te rendre dans le dossier assets/. Tu y trouveras une représentation schématique d'une imbrication possible.` 
 
   ## 2. Dans le composant HomePage, tu vas désormais fetcher ce qui vient de l'API (je te donne le lien dans quelques instants). Pour cela, tu as deux solutions :
     💡 Télécharger la librairie __axios__ (npm install axios);
