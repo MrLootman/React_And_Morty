@@ -1,55 +1,63 @@
-## ```Partie 3: Implémenter l'ajout de fichier```
+# Rick and Morty : Côté serveur
 
-### 0. Piqûre de rappel
+## Félicitation ! 🎉 Te voilà dans la seconde partie du défi Rick and Morty Fullstack !
+## Cette partie se concentrera sur l'élaboration de la partie backend. En effet, jusqu'à présent, tes données proviennent d'une API, depuis laquelle tu extraits un objet contenant tout ce dont tu as besoin. 
+## Il s'agira désormais de créer ton serveur et ta base de données relationnelle pour ne plus dépendre de l'API ! Le dossier backend est quasiment vide, et ce sera à toi de composer toute l'architecture (rien de mieux pour apprendre 😄). Voici donc un récapitulatif des étapes:
 
-    - A ce stade, n'importe quel utilisateur peut:
-        - Créer un personnage depuis un formulaire, et avoir une réponse en retour suffisamment précise pour savoir s'il a réussi. Cette fonctionnalité a été réalisée dans la vidéo suivante: 
 
-🔽🔽🔽      [Lien vers la vidéo YouTube](https://www.youtube.com/watch?v=AR2-vcDQ8_E)
+## ```Partie 1: Mise en place des fondamentaux```
 
-        - Bien entendu, il manque encore quelques fonctionnalités, telles que: 
-            - Sécurisation côté front (avec une indication claire si un input a été mal renseigné);
-            - Sécurisation côté back (pour se protéger des injections SQL notamment);
-            - Une possibilité de mettre à jour un personnage particulier
-            - Une possibilité d'en supprimer un...
-        - L'heure n'étant pas au déploiement, je t'invite à poursuivre le challenge en mettant cela entre parenthèses 🙂
+#### Résumé des étapes 🖥️ :
 
-### 1. Préparation de la partie backend
+### 1. Initialisation d'un serveur express;
+    - Création d'un fichier index.js à la racine du dossier backend.
+        - Installation et important de la dépendance express;
+        - Création d'une instance d'express (Ca ne fait pas sens pour toi ? 🧐 Regardes-donc sur internet comment créer un serveur avec Express.js);
+        - Création de notre première route;
+            `app.get("/", (req, res) => { console.log("Coucou !") })`
+    - Vérification du caractère fonctionnel de notre serveur (simplement pour vérifier que le serveur fonctionne. Tu peux utiliser Postman pour toutes les vérifications que tu auras besoin de faire !);
+    - Installation de la dépendance nodemon (tu te souviens à quoi ça sert ?);
 
-    - A la racine du backend, il nous faut créer le dossier public:
-        - A l'intérieur duquel nous créérons:
-            - un dossier tmp (zone d'accueil du fichier téléchargé avant de l'envoyer dans son emplacement définitif);
-            - un dossier uploads (qui sera le dossier d'accueil des fichiers téléchargés, en fin d'exécution du processus qu'implique multer);
+### 2. Création de notre base de donnée :
+    - Elaboration de notre script database au format sql (à la racine du dossier backend);
+        - Création de la base de donnée rick_and_morty_db;
+        - Création de la table rick_character;
+        - Insertion des premières données (un jeu de donnée avec quatre personnages sera suffisant, mais tu peux en mettre autant que tu veux);
 
-### 2. Installation et utilisation de la dépendance multer
+### 3. Connexion entre le serveur et la base de donnée :
+    - Installation des dépendances dotenv et mysql2;
+        - Rédaction de nos variables d'environnements;
+            - Tu peux t'inspirer du fichier .env.sample, qui contient les données attendues dans le fichier .env que tu auras à créer.;
 
-    - Installation la dépendance multer dans la partie backend, puis:
-        - Créer un fichier uploadRouter.route.js, dans lequel il faudra écrire les lignes de code nécessaires pour obtenir une route permettant le téléchargement d'une image.
-        - Puis, il nous faut créer une fonction / middleware `uploadController` (le fichier peut être stocké dans le dossier controller). Elle te servira notamment à gérer le renommage du fichier provenant de la requête.
+    - Création d'un fichier migration.js (à la racine du dossier backend):
+        - Etablir la connexion avec la base de donnée;
+        - Exécuter le script;
+        - Vérifier que les données sont bien enregistrées;
 
-        🤨 Un doute sur la manière de faire ? Regarde la quête sur l'upload de fichier avec multer !
+## ```Partie 2: Requêtes et réponses```
 
-    - Enfin, tu peux tester dans Postman si ton téléchargement est fonctionnel, en veillant à sélectionner le format form-data, et appliquer le bon nommage pour la key 🔥
+### 4. Mise en place d'une architecture saine
+    - Créer les dossiers nécessaires:
+        - Création du dossier src/, à l'intérieur duquel se tiendront:
+            - Le fichier datasource.js;
+            - Le dossier routes;
+            - Le dossier controllers;
+            - Le dossier models;
 
-### 3. Permettre à l'utilisateur de télécharger une image depuis la page Admin Panel
+    - Le fichier datasource.js doit contenir le code nécessaire pour se connecter à la base de donnée. Tu peux copier la première partie de ton fichier migration.js 😉
 
-    - La suite de ce challenge concernera la partie frontend. Ne la sous-estime pas, il y sera question d'affichages conditionnels, de feuilles de style, de variables d'états utilisées à bon escient... Bref, un super terrain d'entraînement avec React !
-
-    - Je te propose de créer un pattern permettant une expérience utilisateur agréable (perfectible, certes, mais agréable 😀). Voici le lien vers la vidéo YouTube qui t'aidera à te le représenter:
-
-🔽🔽🔽      [Lien vers la vidéo YouTube](https://www.youtube.com/watch?v=rURZ1iCKym0) 
-
-    - Tu vas devoir transformer l'actuel composant CreationCharacterForm pour qu'il affiche un input de type checkbox à la place de l'input de type "text" (celui dédié aux images);
+### 5. Création du Create - Read - Update - Delete pour la table rick_character
+    - Elaboration du CRUD pour le gestionnaire des personnages:
+        - Création d'un fichier rickAndMortyCharacter.controller.js;
+            - Création d'une fonction "getAllCharacters",
+            - Création d'une fonction "getCharacterById",
+            - Création d'une fonction "updateCharacter",
+            - Création d'une fonction "deleteCharacter",
+            - Création d'une fonction "createCharacter";
     
-        - En d'autres termes, l'utilisateur doit voir sur son navigateur la proposition suivante:
-            `Voulez-vous télécharger une image ? 🔘 Yes  🔘 No`
-            - S'il clique sur oui, un input de type "file" doit apparaître. 
-            - S'il clique sur non, un message apparaît nous avertissant que la création n'est pas possible sans image, ainsi qu'un bouton nous permettant de revenir à l'étape précédente.
+    - Elaboration des routes liées à ce gestionnaire précis:
+        - Cinq fonctions = cinq routes;
 
-### 4. A partir de là...
+### 6. Correction des bugs et phase de test
 
-    - Je te laisse explorer, méditer et définir ta manière de faire. A noter qu'il n'y en a pas qu'une seule. Seulement, il y en aura des plus optimisées que d'autres.
-
-    - Je développe certaines stratégies dans ma vidéo sur la création de personnage (cf. partie 2, 8ème étape), tu peux aller y jeter un oeil pour t'en inspirer 😉
-
-    Bonne chance 🚀
+    - Tester les routes et vérifier leur bon fonctionnement 🔥
