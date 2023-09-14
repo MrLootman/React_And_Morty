@@ -1,4 +1,6 @@
-### React.js : Elaboration d'une partie front-end
+# React and Morty : Première partie
+
+🔥🔥🔥 Mode Hardcore 🔥🔥🔥
 
 #### Une consigne, une seule : Tu dois aller sur l'adresse suivante, t'inspirer de cette maquette et la reproduire :
 
@@ -16,4 +18,4 @@ https://rickandmortyapi.com/api
 
 #### Côté fonctionnel, concernant de la partie haute de la page, il s'agit d'un sélecteur permettant de filtrer les cartes. Les options du sélecteur sont relatives au noms des personnages.
 
-### Bonne chance 😈
+# Bonne chance 😈
