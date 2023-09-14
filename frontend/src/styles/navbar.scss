@@ -1,6 +1,5 @@
-.navbar {
-    height: 15vh;
-    background-color: $secondary-color;
+nav {
+    background-color: white;
 
     ul {
         display: flex;
@@ -11,6 +10,7 @@
         li {
             &:last-child {
                 margin-right: 4%;
+
                 img {
                     height: 80px;
                 }
