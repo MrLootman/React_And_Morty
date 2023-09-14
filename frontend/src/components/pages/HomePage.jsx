@@ -18,7 +18,13 @@ function HomePage() {
 
     return (
         <main className="home-page">
-            <select className="home-page_select" onChange={handleChange}>
+            <h1>Rick and Morty <span>Fullstack</span></h1>
+            <label htmlFor="character-select">Select a character:</label>
+            <select
+                id="character-select"
+                className="home-page_select" 
+                onChange={handleChange}
+            >
                 <option>...</option>
                 {data.length > 0 && data.map((el) => {
                     return (

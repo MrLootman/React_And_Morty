@@ -4,8 +4,8 @@ function RickAndMortyCard({ name, image, id }) {
     return (
         <li className="rick-and-morty-card">
             <NavLink to={`/character/${id}`}>
-                <img src={image} />
-                <p>{name}</p>
+                <img src={image} alt={`This image is a character named ${name} from Rick and Morty cartoon`}/>
+                <h2>{name}</h2>
             </NavLink>
         </li>
     )
