@@ -1,10 +1,10 @@
-### Entraînement avec React.js
+# React and Morty: Première partie
 
 
 ## __Préambule__ :
-#### Te voilà prêt à démarrer. Après t'être déplacé dans le dossier frontend, et après avoir installé les dépendances avec la commande `*npm install`, tu pourras tenter la commande :
+#### Te voilà prêt à démarrer. Après t'être déplacé dans le dossier frontend, et après avoir installé les dépendances avec la commande `npm install`, tu pourras tenter la commande :
 
-`*npm run dev`
+`npm run dev`
 
 #### Tu constateras qu'il n'y a rien d'affiché. C'est normal : J'ai nettoyé le fichier App.jsx, et j'ai supprimé les fichiers .css. En résumé : il n'y a rien d'autre qu'une <div> parente, et un commentaire à l'intérieur.
 
